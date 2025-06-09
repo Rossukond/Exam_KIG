@@ -60,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["Goods_id"])) {
     }
 }
 
-
 if (isset($_GET["delete"])) {
     $delete_id = $_GET["delete"];
     $stmt = $conn->prepare("DELETE FROM goods_name WHERE Goods_id = ?");

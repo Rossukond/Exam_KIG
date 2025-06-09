@@ -6,12 +6,19 @@ if ($conn->connect_error) {
 }
 
 // ดึงข้อมูลคำสั่งซื้อสินค้า
-$sql = "SELECT H.CUS_ID, C.CUS_NAME, H.ORDER_NO, COUNT(*) AS CNT, SUM(D.AMOUNT) AS AMOUNT
-        FROM H_ORDER H, D_ORDER D, CUS_NAME C
-        WHERE H.ORDER_NO = D.ORDER_NO AND H.CUS_ID = C.CUS_ID
+$sql = "SELECT 
+            H.CUS_ID, 
+            C.CUS_NAME, 
+            H.ORDER_NO, 
+            COUNT(*) AS CNT, 
+            SUM(D.AMOUNT) AS AMOUNT
+        FROM H_ORDER H
+        JOIN D_ORDER D ON H.ORDER_NO = D.ORDER_NO
+        JOIN CUS_NAME C ON H.CUS_ID = C.CUS_ID
         GROUP BY H.CUS_ID, C.CUS_NAME, H.ORDER_NO";
 $result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -58,6 +65,9 @@ $result = $conn->query($sql);
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
+    .text-right {
+      text-align: right;
+    } 
     .actions a {
       display: inline-block;
       padding: 6px 12px;
@@ -67,7 +77,7 @@ $result = $conn->query($sql);
       text-decoration: none;
     }
     .btn-edit {
-      background-color:rgb(192, 131, 39); /* สีฟ้า */
+      background-color:rgb(192, 131, 39);
     }
     .btn-delete {
       background-color:rgb(124, 47, 54);
@@ -96,20 +106,35 @@ $result = $conn->query($sql);
     </thead>
     <tbody>
     <?php
+    $totalCnt = 0;
+    $totalAmount = 0;
+
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
+            $totalCnt += $row['CNT'];
+            $totalAmount += $row['AMOUNT'];
+
             echo "<tr>
                     <td>{$row['CUS_ID']}</td>
                     <td>{$row['CUS_NAME']}</td>
-                    <td>{$row['ORDER_NO']}</td>
-                    <td>{$row['CNT']}</td>
-                    <td>{$row['AMOUNT']}</td>
+                    <td class='text-right'>{$row['ORDER_NO']}</td>
+                    <td class='text-right'>" . number_format($row['CNT']) . "</td>
+                    <td class='text-right'>" . number_format($row['AMOUNT']) . "</td>
                     <td class='actions'>
                         <a href='order_edit.php?order_no={$row['ORDER_NO']}' class='btn-edit'>แก้ไข</a>
                         <a href='order_delete.php?order_no={$row['ORDER_NO']}' class='btn-delete' onclick=\"return confirm('ต้องการลบข้อมูลนี้หรือไม่?')\">ลบ</a>
                     </td>
                   </tr>";
         }
+
+        // แสดงผลรวมท้ายตาราง
+        echo "<tr style='font-weight: bold; background-color: #f0f0f0;'>
+                <td colspan='3' style='text-align: right;'>รวม</td>
+                <td class='text-right'>" . number_format($totalCnt) . "</td>
+                <td class='text-right'>" . number_format($totalAmount) . "</td>
+                <td></td>
+              </tr>";
+
     } else {
         echo "<tr><td colspan='6' style='text-align:center;'>ไม่พบข้อมูลการสั่งซื้อสินค้า</td></tr>";
     }

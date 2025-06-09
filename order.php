@@ -67,10 +67,10 @@ $result = $conn->query($sql);
       text-decoration: none;
     }
     .btn-edit {
-      background-color: #17a2b8; /* สีฟ้า */
+      background-color:rgb(192, 131, 39); /* สีฟ้า */
     }
     .btn-delete {
-      background-color: #dc3545; /* สีแดง */
+      background-color:rgb(124, 47, 54);
     }
 </style>
 </head>
@@ -79,8 +79,8 @@ $result = $conn->query($sql);
 <h2>แสดงข้อมูลการสั่งซื้อสินค้า</h2>
 
 <div class="top-bar">
-    <a href="order_add.php" class="btn-add">➕ เพิ่มข้อมูลการสั่งซื้อสินค้า</a>
-    <a href="dashboard.php" class="btn-add" style="background-color:#6c757d;">ออก</a>
+    <a href="order_add.php" class="btn-add">เพิ่มข้อมูลการสั่งซื้อสินค้า</a>
+    <a href="dashboard.php" class="btn-add" style="background-color:#6c757d;">กลับหน้าหลัก</a>
 </div>
 
 <table>

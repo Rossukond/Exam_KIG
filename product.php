@@ -163,8 +163,8 @@ $result = $conn->query($sql);
 <p>ข้อมูลสินค้า ณ วันที่ <?= date("d/m/Y") ?></p>
 
 <div class="top-bar">
-  <a href="dashboard.php" class="btn-add" style="background-color: #6c757d;">🏠 หน้าหลัก</a>
-  <button class="btn-add" onclick="openModal()">➕ เพิ่มสินค้า</button>
+  <a href="dashboard.php" class="btn-add" style="background-color: #6c757d;">กลับหน้าหลัก</a>
+  <button class="btn-add" onclick="openModal()" >เพิ่มสินค้า</button>
 </div>
 
 <table>

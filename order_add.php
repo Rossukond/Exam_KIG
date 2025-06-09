@@ -80,8 +80,8 @@ $current_date = date("d/m/Y");
       cursor: pointer;
       margin-right: 8px;
     }
-    .btn-save { background-color: #28a745; color: #fff; }
-    .btn-cancel { background-color: #dc3545; color: #fff; }
+    .btn-save { background:linear-gradient(90deg,rgb(146, 190, 156),rgb(79, 102, 84)); color: #fff; }
+    .btn-cancel { background-color:rgb(124, 47, 54); color: #fff; }
 </style>
 </head>
 <body>

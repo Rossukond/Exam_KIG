@@ -59,7 +59,7 @@ function formatDate($date) {
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>เพิ่มรายการการรับคำสั่งซื้อสินค้า</title>
+<title>การบันทึก/แก้ไข การสั่งซื้อสินค้า</title>
 <style>
     body { font-family: Arial; padding: 20px; background: #f7f7f7; }
     h2 { margin-bottom: 10px; }
@@ -69,7 +69,7 @@ function formatDate($date) {
         width: 100%; padding: 5px; margin-bottom: 10px;
     }
     .btn { padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; }
-    .btn-add { background:rgb(129, 158, 136); color: #00000; }
+
     .btn-back {
         display: inline-block;
         padding: 8px 16px;
@@ -96,13 +96,14 @@ function formatDate($date) {
         display: flex;
         flex-direction: column;
         margin-bottom: 15px;
-        width: 48%;
+        margin-right: 15px;
+        width: 45%;
     }
 
     .form-group-full {
         width: 100%;
-        text-align: center;
-        margin-top: 10px;
+        text-align: right;
+        margin-right: 15px;
     }
 
     .form-container form {
@@ -131,7 +132,7 @@ function formatDate($date) {
         color: #fff;
         padding: 10px 20px;
         font-size: 16px;
-        border-radius: 30px;
+        border-radius: 4px;
         cursor: pointer;
         border: none;
         transition: background 0.3s ease;
@@ -143,13 +144,13 @@ function formatDate($date) {
 
 </style>
 </head>
-<body>
-<h2>การบันทึก/แก้ไข การสั่งซื้อสินค้า</h2>
+<body> 
+<h2>เพิ่มรายการ รายละเอียดการรับคำสั่งซื้อสินค้า</h2>
 
 
 
 <div class="form-container">
-<h3>เพิ่มข้อมูล Detail</h3>
+<h3>เพิ่มข้อมูลรายละเอียดคำสั่งซื้อสินค้า</h3>
 <p><strong>รหัสลูกค้า:</strong> <?php echo $header['CUS_ID']; ?> 
     <strong>ชื่อลูกค้า:</strong> <?php echo $header['CUS_NAME']; ?> 
     <strong>วันที่สั่งสินค้า:</strong> <?php echo formatDate($header['ORDER_DATE']); ?>
@@ -171,7 +172,7 @@ function formatDate($date) {
         </div>
 
         <div class="form-group">
-            <label>วันกำหนดส่ง:</label>
+            <label>วันที่กำหนดส่งสินค้า:</label>
             <input type="date" name="due_date" required>
         </div>
 
@@ -181,7 +182,7 @@ function formatDate($date) {
         </div>
 
         <div class="form-group">
-            <label>จำนวนสั่ง:</label>
+            <label>จำนวนที่สั่งสินค้า:</label>
             <input type="number" name="amount" id="amount" required min="1" placeholder="กรอกจำนวนสินค้า">
         </div>
 
@@ -196,7 +197,7 @@ function formatDate($date) {
         </div>
 
         <div class="form-group-full">
-            <button type="submit" class="btn btn-add">➕ เพิ่มรายการสินค้า</button>
+            <button type="submit" class="btn btn-add">เพิ่มรายการสินค้า</button>
         </div>
     </form>
 </div>
@@ -233,8 +234,8 @@ function formatDate($date) {
 </table>
 
 <div style="position: fixed; bottom: 20px; right: 20px;">
-    <a href="order.php" class="btn btn-back">กลับไปยังหน้าจอแสดงรายการสั่งสินค้า</a>
-    <a href="dashboard.php" class="btn btn-back">กลับหน้าหลัก</a>
+    <a href="order.php" class="btn btn-back">กลับไปยังหน้าแสดงรายการสั่งซื้อสินค้า</a>
+    <a href="dashboard.php" class="btn btn-back" style="background-color:#6c757d;">กลับหน้าหลัก</a>
 </div>
 <script>
 

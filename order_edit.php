@@ -118,7 +118,7 @@ $details = $stmtDetail->get_result();
             <td style="text-align:right;"><?= number_format($row['COST_UNIT'], 2) ?></td>
             <td style="text-align:right;"><?= number_format($row['TOT_PRC'], 2) ?></td>
             <td><a class="btn btn-edit" href="order_detail_edit.php?order_no=<?= $order_no ?>&goods_id=<?= $row['Goods_id'] ?>">แก้ไข</a></td>
-            <td><a class="btn btn-delete" href="order_detail_delete.php?order_no=<?= $order_no ?>&goods_id=<?= $row['Goods_id'] ?>" onclick="return confirm('ต้องการลบรายการสินค้านี้หรือไม่?')">ลบ</a></td>
+            <td><a class="btn btn-delete" href="order_delete.php?order_no=<?= $order_no ?>&goods_id=<?= $row['Goods_id'] ?>" onclick="return confirm('ต้องการลบรายการสินค้านี้หรือไม่?')">ลบ</a></td>
         </tr>
         <?php endwhile; ?>
     </tbody>

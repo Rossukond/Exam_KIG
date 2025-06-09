@@ -30,22 +30,23 @@ $result = $conn->query($sql);
       padding: 20px;
       background-color: #f7f7f7;
     }
-    h2 { margin-bottom: 5px; text-align: center; }
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      margin: 15px 0;
+    
+    h2 { 
+      margin-bottom: 20px; 
+      text-align: center; 
     }
+
     .btn-add {
       display: inline-block;
-      padding: 8px 16px;
-      background-color: #007bff;
+      padding: 10px 20px;
       color: white;
       text-decoration: none;
       border: none;
       border-radius: 4px;
-      font-size: 14px;
+      font-size: 16px;
       cursor: pointer;
+      margin-top: 20px;
+      margin-right: 20px;
     }
     table {
       width: 100%;
@@ -87,11 +88,6 @@ $result = $conn->query($sql);
 <body>
 
 <h2>แสดงข้อมูลการสั่งซื้อสินค้า</h2>
-
-<div class="top-bar">
-    <a href="order_add.php" class="btn-add">เพิ่มข้อมูลการสั่งซื้อสินค้า</a>
-    <a href="dashboard.php" class="btn-add" style="background-color:#6c757d;">กลับหน้าหลัก</a>
-</div>
 
 <table>
     <thead>
@@ -140,7 +136,14 @@ $result = $conn->query($sql);
     }
     ?>
     </tbody>
+
+
 </table>
+
+<div style="position: fixed; right: 20px;">
+<a href="order_add.php" class="btn-add" style="background-color: #007bff;">เพิ่มข้อมูลการสั่งซื้อสินค้า</a>
+<a href="dashboard.php" class="btn-add" style="background-color:#6c757d;">กลับหน้าหลัก</a>
+</div>
 
 </body>
 </html>

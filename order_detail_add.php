@@ -72,12 +72,13 @@ function formatDate($date) {
 
     .btn-back {
         display: inline-block;
-        padding: 8px 16px;
+        padding: 10px 20px;
         background-color: #007bff;
         color: white;
         border-radius: 4px;
+        font-size: 16px;
         text-decoration: none;
-        margin-left: 10px;
+        margin-right: 20px;
     }
 
     .btn-back:hover {
@@ -231,9 +232,11 @@ function formatDate($date) {
         echo "<tr><td colspan='7'>ไม่มีข้อมูลสินค้า</td></tr>";
     }
     ?>
+
+    
 </table>
 
-<div style="position: fixed; bottom: 20px; right: 20px;">
+<div style="position: fixed; margin-top: 20px; right: 20px;">
     <a href="order.php" class="btn btn-back">กลับไปยังหน้าแสดงรายการสั่งซื้อสินค้า</a>
     <a href="dashboard.php" class="btn btn-back" style="background-color:#6c757d;">กลับหน้าหลัก</a>
 </div>

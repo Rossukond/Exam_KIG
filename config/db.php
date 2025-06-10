@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'kig';
+$db = 'KKF';
 $user = 'root';
 $pass = '';
 

@@ -30,7 +30,7 @@ $result = $conn->query($sql);
       padding: 20px;
       background-color: #f7f7f7;
     }
-    
+
     h2 { 
       margin-bottom: 20px; 
       text-align: center; 
@@ -78,10 +78,10 @@ $result = $conn->query($sql);
       text-decoration: none;
     }
     .btn-edit {
-      background-color:rgb(192, 131, 39);
+      background-color:#ff9800;
     }
     .btn-delete {
-      background-color:rgb(124, 47, 54);
+      background-color: #f44336;
     }
 </style>
 </head>
@@ -141,8 +141,8 @@ $result = $conn->query($sql);
 </table>
 
 <div style="position: fixed; right: 20px;">
-<a href="order_add.php" class="btn-add" style="background-color: #007bff;">เพิ่มข้อมูลการสั่งซื้อสินค้า</a>
-<a href="dashboard.php" class="btn-add" style="background-color:#6c757d;">กลับหน้าหลัก</a>
+  <a href="order_add.php" class="btn-add" style="background-color: #007bff;">เพิ่มข้อมูลการสั่งซื้อสินค้า</a>
+  <a href="dashboard.php" class="btn-add" style="background-color:#6c757d;">กลับหน้าหลัก</a>
 </div>
 
 </body>
